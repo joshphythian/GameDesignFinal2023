@@ -29,6 +29,11 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Ray();
+    }
+
+    private void Ray()
+    {
         Ray r = new Ray(InteractorSource.position, InteractorSource.forward); // Raycast created with position and direction of interactor source
 
         hitSomething = false;
@@ -39,7 +44,7 @@ public class Interactor : MonoBehaviour
             if (interactable != null)
             {
                 hitSomething = true;
-                interactionText.text = interactable.GetDescription();
+                interactionText.text = interactable.GetDescription(); // Calls GetDescription function on given object
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
